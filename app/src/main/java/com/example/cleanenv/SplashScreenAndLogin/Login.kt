@@ -19,8 +19,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.example.cleanenv.Utils.Registrationeed
 
 class Login : AppCompatActivity() {
+    val checkPass = Registrationeed()
     private lateinit var database: DatabaseReference
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient : GoogleSignInClient
@@ -45,11 +47,8 @@ class Login : AppCompatActivity() {
             startActivity(Intent(this,Register::class.java))
             overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
         }
-
-//        binding.imageView.setOnClickListener{
-//            val intent : Intent = Intent(this , singIn::class.java)
-//            startActivity(intent)
-//        }
+        passwordFocusListener()
+        PhoneFocusListener()
 
         binding.logbutton.setOnClickListener {
 //            signInGoogle()
@@ -116,6 +115,25 @@ class Login : AppCompatActivity() {
             }else{
                 Toast.makeText(this, it.exception.toString() , Toast.LENGTH_SHORT).show()
 
+            }
+        }
+    }
+    private fun passwordFocusListener()
+    {
+        binding.logpass.setOnFocusChangeListener { _, focused ->
+            if(!focused)
+            {
+                binding.logPassHelper.helperText = checkPass.validPassword(binding.logpass.text.toString())
+            }
+        }
+    }
+    private fun PhoneFocusListener()
+    {
+        binding.logphone.setOnFocusChangeListener { _, focused ->
+            if(!focused)
+            {
+                if(checkPass.isValidMobile(binding.logphone.text.toString()))binding.regPhoneHelper.helperText = null
+                else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
             }
         }
     }

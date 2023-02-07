@@ -22,7 +22,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="210dp"
-        android:layout_height="530dp"
+        android:layout_height="600dp"
         android:background="@drawable/ic_register_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +81,11 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/regNameHelper"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/Red"
                 android:layout_marginTop="6dp"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
@@ -100,9 +103,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phone"
+                android:id="@+id/regPhoneHelper"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/Red"
                 android:layout_marginTop="6dp"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
@@ -120,9 +125,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/regEmailHelper"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/Red"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
 
@@ -138,13 +146,15 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/regPassHelper"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/Red"
+                app:passwordToggleEnabled="true"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
                 android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                app:passwordToggleEnabled="true">
+                android:paddingEnd="6dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/regPass"
@@ -158,8 +168,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/regPassConfirmHelper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/Red"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="24dp"
                 android:paddingStart="6dp"
