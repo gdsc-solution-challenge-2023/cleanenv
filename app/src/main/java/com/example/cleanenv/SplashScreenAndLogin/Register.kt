@@ -46,7 +46,6 @@ class Register : AppCompatActivity() {
             name = binding.regName.text.toString()
             phone = binding.regPhone.text.toString()
             password = binding.regPass.text.toString()
-            conPass = binding.regPassCon.text.toString()
 //            confirmFocusListener()
             database.child("users").child(phone.toString()).get().addOnSuccessListener() {
                 if (it.value != null) {
@@ -63,7 +62,6 @@ class Register : AppCompatActivity() {
                                 binding.regName.text?.clear()
                                 binding.regPhone.text?.clear()
                                 binding.regPass.text?.clear()
-                                binding.regPassCon.text?.clear()
                                 Toast.makeText(this, "succesfuly saved", Toast.LENGTH_SHORT).show()
                             }.addOnFailureListener {
                                 Toast.makeText(this, "dalised", Toast.LENGTH_SHORT).show()
@@ -128,7 +126,7 @@ class Register : AppCompatActivity() {
 
 
     private fun allOk(): Boolean {
-        if(binding.regNameHelper.helperText ==null && binding.regPhoneHelper.helperText == null && binding.regPassHelper.helperText == null && binding.regPassConfirmHelper.helperText == null)return true
+        if(binding.regNameHelper.helperText ==null && binding.regPhoneHelper.helperText == null && binding.regPassHelper.helperText == null )return true
         return false
     }
 
