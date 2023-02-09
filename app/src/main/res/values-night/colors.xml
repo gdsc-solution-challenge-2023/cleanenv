@@ -8,6 +8,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Shadow">#FFFFFFFF</color>
     <color name="colorPrimary">#75d481</color>
     <color name="colorPrimaryVariant">#f3fadc</color>
     <color name="colorOnPrimary">@color/black</color>
