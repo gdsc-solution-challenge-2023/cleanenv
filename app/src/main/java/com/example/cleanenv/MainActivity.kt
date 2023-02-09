@@ -1,6 +1,8 @@
 package com.example.cleanenv
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
@@ -18,11 +20,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.cleanenv.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var database: DatabaseReference
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,13 +53,22 @@ class MainActivity : AppCompatActivity() {
         val userName = header.findViewById<TextView>(R.id.UserName)
         val userEmail = header.findViewById<TextView>(R.id.UserEmail)
 
-        val email = intent.getStringExtra("email")
-        val displayName = intent.getStringExtra("name")
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
 
-        userName.text = displayName
-        userEmail.text = email
+        val phone = intent.getStringExtra("phone")
 
-        Toast.makeText(this, "welcome "+displayName, Toast.LENGTH_LONG).show()
+
+        database.child("users").child(phone.toString()).get().addOnSuccessListener(){
+            userEmail.text = it.child("email").value.toString()
+            userName.text = it.child("name").value.toString()
+            Toast.makeText(this, "welcome "+it.child("name").value.toString(), Toast.LENGTH_LONG).show()
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+            Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT).show()
+        }
+
+
         Glide.with(this)
             .asBitmap()
             .apply(RequestOptions().override(145, 145))
@@ -66,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_aboutUs,R.id.nav_contactUs
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

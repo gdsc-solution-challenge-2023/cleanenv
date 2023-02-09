@@ -2,6 +2,7 @@ package com.example.cleanenv.SplashScreenAndLogin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.util.Patterns.EMAIL_ADDRESS
 import android.view.View
@@ -31,43 +32,52 @@ class Register : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        NameFocusListener()
-        PhoneFocusListener()
-        EmailFocusListener()
-        passwordFocusListener()
+//        NameFocusListener()
+//        PhoneFocusListener()
+//        EmailFocusListener()
+//        passwordFocusListener()
 
-
+//
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
-
+//
         binding.RegisterButton.setOnClickListener{
             binding.prog.visibility = View.VISIBLE
             name = binding.regName.text.toString()
             phone = binding.regPhone.text.toString()
-            email = binding.regEmail.text.toString()
             password = binding.regPass.text.toString()
             conPass = binding.regPassCon.text.toString()
-            confirmFocusListener()
-            if (name == "" || phone == "" || email == "" || password == "" || conPass.toString() == "") {
-                Toast.makeText(this, "please enter all the details", Toast.LENGTH_SHORT).show()
-            }
-            else if(allOk()){
-                val User = user(name, phone, email,password)
-                phone?.let {
-                    database.child("users").child(it).setValue(User).addOnSuccessListener {
-                        binding.regName.text?.clear()
-                        binding.regPhone.text?.clear()
-                        binding.regEmail.text?.clear()
-                        binding.regPass.text?.clear()
-                        binding.regPassCon.text?.clear()
-                        Toast.makeText(this, "succesfuly saved", Toast.LENGTH_SHORT).show()
-                    }.addOnFailureListener {
-                        Toast.makeText(this, "dalised", Toast.LENGTH_SHORT).show()
+//            confirmFocusListener()
+            database.child("users").child(phone.toString()).get().addOnSuccessListener() {
+                if (it.value != null) {
+                    Toast.makeText(this, "this user id is already registered", Toast.LENGTH_SHORT)
+                        .show()
+                }else{
+                    if (name == "" || phone == "" || email == "" || password == "" || conPass.toString() == "") {
+                        Toast.makeText(this, "please enter all the details", Toast.LENGTH_SHORT).show()
                     }
+                    else if(allOk()){
+                        val User = user(name, phone, email,password)
+                        phone?.let {
+                            database.child("users").child(it).setValue(User).addOnSuccessListener {
+                                binding.regName.text?.clear()
+                                binding.regPhone.text?.clear()
+                                binding.regPass.text?.clear()
+                                binding.regPassCon.text?.clear()
+                                Toast.makeText(this, "succesfuly saved", Toast.LENGTH_SHORT).show()
+                            }.addOnFailureListener {
+                                Toast.makeText(this, "dalised", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    else Toast.makeText(this, "please enter all the details properly", Toast.LENGTH_SHORT).show();
+                    binding.prog.visibility = View.GONE
                 }
+            }.addOnFailureListener{
+                Log.e("firebase", "Error getting data", it)
+                Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT).show()
             }
-            else Toast.makeText(this, "please enter all the details properly", Toast.LENGTH_SHORT).show();
-            binding.prog.visibility = View.GONE
+
         }
 
 
@@ -105,52 +115,52 @@ class Register : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
     }
 
-    private fun confirmFocusListener() {
-        binding.regPassCon.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                if (binding.regPass.text.toString() != binding.regPassCon.text.toString()) {
-                    binding.regPassConfirmHelper.helperText = "please enter same password in both"
-                }else binding.regPassConfirmHelper.helperText = null
-            }
-        }
-    }
+//    private fun confirmFocusListener() {
+//        binding.regPassCon.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                if (binding.regPass.text.toString() != binding.regPassCon.text.toString()) {
+//                    binding.regPassConfirmHelper.helperText = "please enter same password in both"
+//                }else binding.regPassConfirmHelper.helperText = null
+//            }
+//        }
+//    }
 
 
     private fun allOk(): Boolean {
-        if(binding.regNameHelper.helperText ==null && binding.regPhoneHelper.helperText == null && binding.regPassHelper.helperText == null&& binding.regEmailHelper.helperText == null && binding.regPassConfirmHelper.helperText == null)return true
+        if(binding.regNameHelper.helperText ==null && binding.regPhoneHelper.helperText == null && binding.regPassHelper.helperText == null && binding.regPassConfirmHelper.helperText == null)return true
         return false
     }
 
-    private fun NameFocusListener()
-    {
-        binding.regName.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                if(binding.regName.text.toString()!="")binding.regNameHelper.helperText = null
-            }
-        }
-    }
-    private fun PhoneFocusListener()
-    {
-        binding.regPhone.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                if(checkPass.isValidMobile(binding.regPhone.text.toString()))binding.regPhoneHelper.helperText = null
-                else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
-            }
-        }
-    }
-    private fun EmailFocusListener()
-    {
-        binding.regEmail.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                if(checkPass.isEmailValid(binding.regEmail.text.toString()))binding.regEmailHelper.helperText = null
-                else binding.regEmailHelper.helperText = "Please enter a valid Email id"
-            }
-        }
-    }
+//    private fun NameFocusListener()
+//    {
+//        binding.regName.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                if(binding.regName.text.toString()!="")binding.regNameHelper.helperText = null
+//            }
+//        }
+//    }
+//    private fun PhoneFocusListener()
+//    {
+//        binding.regPhone.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                if(checkPass.isValidMobile(binding.regPhone.text.toString()))binding.regPhoneHelper.helperText = null
+//                else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
+//            }
+//        }
+//    }
+//    private fun EmailFocusListener()
+//    {
+//        binding.regEmail.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                if(checkPass.isEmailValid(binding.regEmail.text.toString()))binding.regEmailHelper.helperText = null
+//                else binding.regEmailHelper.helperText = "Please enter a valid Email id"
+//            }
+//        }
+//    }
     private fun passwordFocusListener()
     {
         binding.regPass.setOnFocusChangeListener { _, focused ->
@@ -160,8 +170,8 @@ class Register : AppCompatActivity() {
             }
         }
     }
-
-
+//
+//
 }
 
 //    public override fun onStart() {
@@ -171,5 +181,3 @@ class Register : AppCompatActivity() {
 //        if(currentUser != null){
 //            reload()
 //        }
-//    }
-//}

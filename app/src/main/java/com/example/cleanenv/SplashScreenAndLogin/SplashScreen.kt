@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import com.example.cleanenv.MainActivity
 import com.example.cleanenv.R
 
@@ -12,10 +13,12 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        Handler().postDelayed({
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
+        Looper.myLooper()?.let {
+            Handler(it) .postDelayed({
+                val intent = Intent(this, Login::class.java)
+                startActivity(intent)
+                finish()
+            }, 3000)
+        }
     }
 }

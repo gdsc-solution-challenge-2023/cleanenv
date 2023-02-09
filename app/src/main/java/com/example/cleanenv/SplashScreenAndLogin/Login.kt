@@ -1,7 +1,9 @@
 package com.example.cleanenv.SplashScreenAndLogin
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.example.cleanenv.Utils.Registrationeed
 
 class Login : AppCompatActivity() {
+    val prefname = "myPref"
+    lateinit var sharedPreferences: SharedPreferences
     val checkPass = Registrationeed()
     private lateinit var database: DatabaseReference
     private lateinit var auth : FirebaseAuth
@@ -50,6 +54,8 @@ class Login : AppCompatActivity() {
         passwordFocusListener()
         PhoneFocusListener()
 
+        sharedPreferences = this.getSharedPreferences(prefname, Context.MODE_PRIVATE)
+        val editer = sharedPreferences.edit()
         binding.logbutton.setOnClickListener {
 //            signInGoogle()
             var phone = binding.logphone.text
@@ -61,10 +67,13 @@ class Login : AppCompatActivity() {
                     Toast.makeText(this, "this user id is not registered", Toast.LENGTH_SHORT).show()
                 }
                 else if(it.child("password").value==password.toString()){
+                    editer.apply(){
+                        putBoolean("loggedin",true)
+                        putString("phone",phone.toString())
+                        apply()
+                    }
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("email" , it.child("email").value.toString())
-                    intent.putExtra("name" , it.child("name").value.toString())
-//                    intent.putExtra("pic",it.child("password").value)
+                    intent.putExtra("phone" , phone.toString())
                     startActivity(intent)
                     finish()
                 }else{
@@ -72,6 +81,7 @@ class Login : AppCompatActivity() {
                 }
             }.addOnFailureListener{
                 Log.e("firebase", "Error getting data", it)
+                Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -135,6 +145,16 @@ class Login : AppCompatActivity() {
                 if(checkPass.isValidMobile(binding.logphone.text.toString()))binding.regPhoneHelper.helperText = null
                 else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
             }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(sharedPreferences.getBoolean("loggedin",false)){
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("phone" ,sharedPreferences.getString("phone",null))
+            startActivity(intent)
+            finish()
         }
     }
 }
