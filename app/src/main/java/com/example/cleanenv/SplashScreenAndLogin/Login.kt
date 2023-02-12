@@ -40,19 +40,19 @@ class Login : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
 
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
+//        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail()
+//            .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this , gso)
+//        googleSignInClient = GoogleSignIn.getClient(this , gso)
 
-        binding.btnRegLogin.setOnClickListener {
+        binding.btnSignUp.setOnClickListener {
             startActivity(Intent(this,Register::class.java))
             overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
         }
-        passwordFocusListener()
-        PhoneFocusListener()
+//        passwordFocusListener()
+//        PhoneFocusListener()
 
         sharedPreferences = this.getSharedPreferences(prefname, Context.MODE_PRIVATE)
         val editer = sharedPreferences.edit()
@@ -87,67 +87,67 @@ class Login : AppCompatActivity() {
         }
     }
 
-    private fun signInGoogle(){
-        val signInIntent = googleSignInClient.signInIntent
-        launcher.launch(signInIntent)
-    }
-
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-            result ->
-        if (result.resultCode == Activity.RESULT_OK){
-
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            handleResults(task)
-        }
-    }
-
-    private fun handleResults(task: Task<GoogleSignInAccount>) {
-        if (task.isSuccessful){
-            val account : GoogleSignInAccount? = task.result
-            if (account != null){
-                updateUI(account)
-            }
-        }else{
-            Toast.makeText(this, task.exception.toString() , Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun updateUI(account: GoogleSignInAccount) {
-        val credential = GoogleAuthProvider.getCredential(account.idToken , null)
-        auth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful){
-                val intent : Intent = Intent(this , MainActivity::class.java)
-                intent.putExtra("email" , account.email)
-                intent.putExtra("name" , account.displayName)
-                intent.putExtra("pic",account.photoUrl.toString())
-                startActivity(intent)
-//                finish()
-            }else{
-                Toast.makeText(this, it.exception.toString() , Toast.LENGTH_SHORT).show()
-
-            }
-        }
-    }
-    private fun passwordFocusListener()
-    {
-        binding.logpass.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                binding.logPassHelper.helperText = checkPass.validPassword(binding.logpass.text.toString())
-            }
-        }
-    }
-    private fun PhoneFocusListener()
-    {
-        binding.logphone.setOnFocusChangeListener { _, focused ->
-            if(!focused)
-            {
-                if(checkPass.isValidMobile(binding.logphone.text.toString()))binding.regPhoneHelper.helperText = null
-                else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
-            }
-        }
-    }
-
+//    private fun signInGoogle(){
+//        val signInIntent = googleSignInClient.signInIntent
+//        launcher.launch(signInIntent)
+//    }
+//
+//    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+//            result ->
+//        if (result.resultCode == Activity.RESULT_OK){
+//
+//            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+//            handleResults(task)
+//        }
+//    }
+//
+//    private fun handleResults(task: Task<GoogleSignInAccount>) {
+//        if (task.isSuccessful){
+//            val account : GoogleSignInAccount? = task.result
+//            if (account != null){
+//                updateUI(account)
+//            }
+//        }else{
+//            Toast.makeText(this, task.exception.toString() , Toast.LENGTH_SHORT).show()
+//        }
+//    }
+//
+//    private fun updateUI(account: GoogleSignInAccount) {
+//        val credential = GoogleAuthProvider.getCredential(account.idToken , null)
+//        auth.signInWithCredential(credential).addOnCompleteListener {
+//            if (it.isSuccessful){
+//                val intent : Intent = Intent(this , MainActivity::class.java)
+//                intent.putExtra("email" , account.email)
+//                intent.putExtra("name" , account.displayName)
+//                intent.putExtra("pic",account.photoUrl.toString())
+//                startActivity(intent)
+////                finish()
+//            }else{
+//                Toast.makeText(this, it.exception.toString() , Toast.LENGTH_SHORT).show()
+//
+//            }
+//        }
+//    }
+//    private fun passwordFocusListener()
+//    {
+//        binding.logpass.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                binding.logPassHelper.helperText = checkPass.validPassword(binding.logpass.text.toString())
+//            }
+//        }
+//    }
+//    private fun PhoneFocusListener()
+//    {
+//        binding.logphone.setOnFocusChangeListener { _, focused ->
+//            if(!focused)
+//            {
+//                if(checkPass.isValidMobile(binding.logphone.text.toString()))binding.regPhoneHelper.helperText = null
+//                else binding.regPhoneHelper.helperText = "Please enter a valid phone number"
+//            }
+//        }
+//    }
+//
     override fun onStart() {
         super.onStart()
         if(sharedPreferences.getBoolean("loggedin",false)){

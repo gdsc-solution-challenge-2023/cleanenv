@@ -11,7 +11,6 @@
         android:id="@+id/textView"
         android:layout_width="417dp"
         android:layout_height="63dp"
-        android:layout_marginTop="40dp"
         android:fontFamily="serif"
         android:shadowColor="#51686E"
         android:shadowDx="2"
@@ -22,26 +21,23 @@
         android:textColor="@color/colorPrimary"
         android:textSize="46sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
-
+        app:layout_constraintVertical_bias="0.056"
+        tools:layout_editor_absoluteX="-7dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="410dp"
         android:layout_height="27dp"
-        android:layout_marginBottom="32dp"
         android:fontFamily="serif"
         android:text="recycling with us"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/regNameHelper"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195"
+        tools:layout_editor_absoluteX="-9dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -51,82 +47,17 @@
         android:text="You are just one step away from"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/regNameHelper"
         android:layout_width="317dp"
         android:layout_height="72dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/btn_top_others"
-        android:textColorHint="@color/colorPrimary"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/colorPrimary"
-        app:hintTextColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@id/regPhoneHelper"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="name"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
-            android:textSize="18sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/regPhoneHelper"
-        android:layout_width="317dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/btn_top_others"
-        android:textColorHint="@color/colorPrimary"
-        app:boxBackgroundColor="@color/white"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/colorPrimary"
-        app:hintTextColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@id/regPassHelper"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/regPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="phone"
-            android:textColor="@color/black"
-            android:textColorHint="@color/white"
-            android:textSize="18sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/regPassHelper"
-        android:layout_width="317dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="332dp"
         android:background="@drawable/btn_top_others"
         android:textColorHint="@color/colorPrimary"
         app:boxBackgroundColor="@color/white"
@@ -143,6 +74,76 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/regPhoneHelper"
+        android:layout_width="317dp"
+        android:layout_height="72dp"
+        android:background="@drawable/btn_top_others"
+        android:textColorHint="@color/colorPrimary"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/colorPrimary"
+        app:hintTextColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/regPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/regPassHelper"
+        android:layout_width="317dp"
+        android:layout_height="72dp"
+        android:background="@drawable/btn_top_others"
+        android:textColorHint="@color/colorPrimary"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/colorPrimary"
+        app:hintTextColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -166,20 +167,21 @@
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPassHelper"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:layout_marginTop="12dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegisterButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.708">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -250,9 +252,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/textView10"
@@ -265,22 +268,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/prog"
-        android:visibility="gone"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
