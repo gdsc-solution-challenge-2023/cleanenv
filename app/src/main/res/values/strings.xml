@@ -8,8 +8,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Recycle</string>
-    <string name="menu_gallery">History</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_track">Track Order</string>
+    <string name="menu_gallery">Order History</string>
     <string name="menu_slideshow">Settings</string>
     <string name="menu_Aboutus">About us</string>
     <string name="menu_ContactUs">Contact us</string>

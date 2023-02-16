@@ -3,8 +3,6 @@ package com.example.cleanenv.SplashScreenAndLogin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.util.Patterns
-import android.util.Patterns.EMAIL_ADDRESS
 import android.view.View
 import android.widget.Toast
 import androidx.core.util.PatternsCompat.EMAIL_ADDRESS
