@@ -31,10 +31,10 @@ class trackOrder : Fragment() {
         _binding = FragmentTrackOrderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.ttext
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        val textView: TextView = binding.ttext
+//        slideshowViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 
