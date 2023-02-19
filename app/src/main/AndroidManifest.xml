@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Cleanenv"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.newAddress"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.addressDetails"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

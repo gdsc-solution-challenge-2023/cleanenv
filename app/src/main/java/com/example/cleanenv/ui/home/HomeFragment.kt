@@ -1,5 +1,6 @@
 package com.example.cleanenv.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -108,6 +109,8 @@ class HomeFragment : Fragment() {
 //            textView.text = it
 //        }
         binding.button.setOnClickListener{
+            val intent = Intent(context,addressDetails::class.java)
+            startActivity(intent)
             Toast.makeText(context, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
         }
         return root
