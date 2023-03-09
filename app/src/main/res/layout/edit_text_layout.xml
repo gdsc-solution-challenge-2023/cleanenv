@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="350dp"
     android:layout_height="match_parent"
     android:background="@drawable/botton_sheet_background"
-    android:padding="15dp">
+    android:padding="20dp">
     <TextView
         android:id="@+id/headingDialog"
         android:layout_width="match_parent"
@@ -26,20 +26,34 @@
         <Button
             android:layout_width="450dp"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/Shadow"
+            android:backgroundTint="@color/colorSecendory"
             android:text="Cancel"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_weight="1"
+            android:layout_marginEnd="5dp"
             android:id="@+id/btn_cancel"/>
         <Button
             android:layout_width="450dp"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/Shadow"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/colorSecendory"
             android:text="Okay"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_weight="1"
             android:id="@+id/btn_okay"/>
+        <Button
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/colorSecendory"
+            android:text="Resend"
+            android:visibility="gone"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:id="@+id/btn_resend"/>
     </LinearLayout>
+
 </LinearLayout>

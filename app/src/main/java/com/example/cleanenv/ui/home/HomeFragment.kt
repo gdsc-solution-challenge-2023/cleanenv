@@ -1,21 +1,23 @@
 package com.example.cleanenv.ui.home
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.net.http.SslCertificate.saveState
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.cleanenv.R
 import com.example.cleanenv.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
 
+class HomeFragment : Fragment() {
+    val prefname = "Home"
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var editer : SharedPreferences.Editor
     private var _binding: FragmentHomeBinding? = null
     var paper = 0
     var bottle = 0
@@ -37,6 +39,9 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        sharedPreferences = this.requireContext().getSharedPreferences(prefname, Context.MODE_PRIVATE)
+        editer = sharedPreferences.edit()
 
 //        val crashButton = Button(this)
 //        crashButton.text = "Test Crash"
@@ -110,6 +115,12 @@ class HomeFragment : Fragment() {
 //        }
         binding.button.setOnClickListener{
             val intent = Intent(context,addressDetails::class.java)
+            intent.putExtra("paper",paper)
+            intent.putExtra("bottle",bottle)
+            intent.putExtra("canMetal",canMetal)
+            intent.putExtra("glassWine",glassWine)
+            intent.putExtra("cloths",cloths)
+            intent.putExtra("OthersTrush",OthersTrush)
             startActivity(intent)
             Toast.makeText(context, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
         }
@@ -126,4 +137,6 @@ class HomeFragment : Fragment() {
         cloths = 0
         OthersTrush = 0
     }
+
+
 }

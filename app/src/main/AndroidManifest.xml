@@ -15,10 +15,16 @@
         android:theme="@style/Theme.Cleanenv"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.order_summery"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.newAddress"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".ui.home.addressDetails"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
