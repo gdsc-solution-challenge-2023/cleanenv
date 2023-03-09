@@ -10,7 +10,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Shadow">#4C4949</color>
-    <color name="colorPrimary">#bdddb0</color>
-    <color name="colorSecendory">#2a4c09</color>
+    <color name="colorPrimary">#81a969</color>
+    <color name="colorSecendory">#0A9378</color>
     <color name="colorPrimaryVariant">#ebf4e8</color>
 </resources>

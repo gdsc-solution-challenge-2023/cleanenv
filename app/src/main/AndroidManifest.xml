@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,18 @@
         android:theme="@style/Theme.Cleanenv"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.order_summery"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.newAddress"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.addressDetails"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -23,24 +37,24 @@
         </activity>
         <activity
             android:name=".SplashScreenAndLogin.Register"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Cleanenv.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".SplashScreenAndLogin.Login"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Cleanenv.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".SplashScreenAndLogin.SplashScreen"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Cleanenv.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,8 @@
 package com.example.cleanenv.Utils
 
+import android.text.Editable
+import android.util.Patterns
+import androidx.core.text.trimmedLength
 import java.util.regex.Pattern
 
 class Registrationeed {
@@ -28,7 +31,25 @@ class Registrationeed {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
     fun isValidMobile(phone: String): Boolean {
-        return android.util.Patterns.PHONE.matcher(phone).matches()
+        return phone.trimmedLength() in (10..13) && Patterns.PHONE.matcher(phone).matches()
     }
+
+    fun mailDotNotTakingProblemSolved(email: String): String {
+        var ans = ""
+        for (i in 0..email.length-1){
+            if(email[i]!='.')ans+=email[i]
+        }
+        return ans
+    }
+    fun isValidMobileAgainstIndian(phone: String?) : String? {
+        var phonee = phone
+        if (phone != null) {
+            if(phone.get(0).toString()!="+"){
+                phonee = "+91${phone}";
+            }
+        }
+        return phonee
+    }
+
 
 }

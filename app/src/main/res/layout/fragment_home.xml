@@ -4,19 +4,287 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryVariant"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+
+    <androidx.cardview.widget.CardView
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/paper"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        android:backgroundTint="#FFFFFFFF"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/paper_icon" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClickedPaper"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/paper_icon" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottle"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/plastic_bottle" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClickedBottle"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/plastic_bottle" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/metleBotle"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/soda_can" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClickedMetalBottle"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/soda_can" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Glass"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/wine" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClickedGlass"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/wine" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cloths"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/tshirt" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClikedCloths"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/tshirt" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Others"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/recycle_bin" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ClickedOthers"
+        android:layout_width="130dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:src="@drawable/recycle_bin" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:text="Button"
+        android:background="@drawable/botton_sheet_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
