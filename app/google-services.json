@@ -1,79 +1,34 @@
 {
   "project_info": {
-    "project_number": "1080093136784",
-    "firebase_url": "https://verdant-volt-default-rtdb.firebaseio.com",
-    "project_id": "verdant-volt",
-    "storage_bucket": "verdant-volt.appspot.com"
+    "project_number": "467200291841",
+    "firebase_url": "https://cleanenv-4ca72-default-rtdb.firebaseio.com",
+    "project_id": "cleanenv-4ca72",
+    "storage_bucket": "cleanenv-4ca72.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1080093136784:android:850638d4f84ae7a1568515",
+        "mobilesdk_app_id": "1:467200291841:android:c74966775e915cf2b8fc00",
         "android_client_info": {
           "package_name": "com.example.cleanenv"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1080093136784-337hrnhco30coh4scntf51qbdok6lspr.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.cleanenv",
-            "certificate_hash": "a016d02257c77aebfefc5d206264543df591bfd1"
-          }
-        },
-        {
-          "client_id": "1080093136784-0dl2udol6gs1pun288e8nbcik8t36qhp.apps.googleusercontent.com",
+          "client_id": "467200291841-8h3qh7ln0qdirq0flao9o2onc5vuvb8o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBiqdVJYsi64uXfkAWxEhEo3mREyPv6V2I"
+          "current_key": "AIzaSyATWa0PIQvy2UMB5tFyPvAkFeKtGU6i0tU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1080093136784-0dl2udol6gs1pun288e8nbcik8t36qhp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1080093136784:android:bec596e6e02da476568515",
-        "android_client_info": {
-          "package_name": "com.example.verdantvolt"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1080093136784-fe5jf6rp2qm2mmsnk366eqfunhs1cl7b.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.verdantvolt",
-            "certificate_hash": "a016d02257c77aebfefc5d206264543df591bfd1"
-          }
-        },
-        {
-          "client_id": "1080093136784-0dl2udol6gs1pun288e8nbcik8t36qhp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBiqdVJYsi64uXfkAWxEhEo3mREyPv6V2I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1080093136784-0dl2udol6gs1pun288e8nbcik8t36qhp.apps.googleusercontent.com",
+              "client_id": "467200291841-8h3qh7ln0qdirq0flao9o2onc5vuvb8o.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

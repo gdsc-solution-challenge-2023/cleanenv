@@ -19,6 +19,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.example.cleanenv.MainActivity
 import com.example.cleanenv.R
 import com.example.cleanenv.Utils.Registrationeed
+import com.example.cleanenv.Utils.bank
 import com.example.cleanenv.databinding.ActivityRegisterBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -85,7 +86,6 @@ class Register : AppCompatActivity() {
                     progrsDialog.setMessage("verifying")
                     progrsDialog.show()
                     startVerifying(phone!!)
-//                    showOtp(name!!, phone!!, password!!)
             }
 
         }
@@ -113,7 +113,7 @@ class Register : AppCompatActivity() {
         editer = sharedPreferences.edit()
         auth = FirebaseAuth.getInstance()
 //        auth.getFirebaseAuthSettings().setAppVerificationDisabledForTesting(true);
-        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
+        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cleanenv-4ca72-default-rtdb.firebaseio.com/")
 
         Callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
@@ -149,10 +149,9 @@ class Register : AppCompatActivity() {
         val button = dialogLayout.findViewById<Button>(R.id.btn_okay)
         builder.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         builder.show()
+
         showEditTextDialogIfShowedOrNot = true
         button.setOnClickListener{
-//            Toast.makeText(this@Register,text.text.toString().get(0).toString(),Toast.LENGTH_LONG).show()
-
             progrsDialog.setMessage("verifying")
             progrsDialog.show()
             phone = text.text.toString()
@@ -264,7 +263,8 @@ class Register : AppCompatActivity() {
                 )
                     .show()
             } else {
-                val User = user(name, phone, email, password,Pic)
+                val bank = bank("","","")
+                val User = user(name, phone, email, password,Pic,"",bank)
                 phone?.let {
                     database.child("users").child(it).setValue(User)
                         .addOnSuccessListener {
@@ -278,7 +278,6 @@ class Register : AppCompatActivity() {
                             editer.apply()
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("phone", phone.toString())
-                            intent.putExtra("commingFromRegister", true)
                             startActivity(intent)
                             finish()
                         }.addOnFailureListener {
@@ -415,25 +414,25 @@ class Register : AppCompatActivity() {
         }
     }
 
-    private fun checkingEmailExistance(email: String): Boolean {
-        var reasult = true
-        database.child("EmailToPhone").child(email).get().addOnSuccessListener {
-            if (it.value != null) {
-                Toast.makeText(
-                    this,
-                    "this email is already registered",
-                    Toast.LENGTH_SHORT
-                ).show()
-                reasult = false
-            }
-        }.addOnFailureListener {
-            reasult = false
-            Log.e("firebase", "Error getting data", it)
-            Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
-                .show()
-        }
-        return reasult
-    }
+//    private fun checkingEmailExistance(email: String): Boolean {
+//        var reasult = true
+//        database.child("EmailToPhone").child(email).get().addOnSuccessListener {
+//            if (it.value != null) {
+//                Toast.makeText(
+//                    this,
+//                    "this email is already registered",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//                reasult = false
+//            }
+//        }.addOnFailureListener {
+//            reasult = false
+//            Log.e("firebase", "Error getting data", it)
+//            Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
+//                .show()
+//        }
+//        return reasult
+//    }
 
 
 //

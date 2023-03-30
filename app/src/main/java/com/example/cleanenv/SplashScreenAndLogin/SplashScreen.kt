@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.cleanenv.MainActivity
 import com.example.cleanenv.R
 
 class SplashScreen : AppCompatActivity() {
@@ -15,10 +14,10 @@ class SplashScreen : AppCompatActivity() {
 
         Looper.myLooper()?.let {
             Handler(it) .postDelayed({
-                val intent = Intent(this, Login::class.java)
+                val intent = Intent(this, both::class.java)
                 startActivity(intent)
                 finish()
-            }, 3000)
+            }, 1000)
         }
     }
 }

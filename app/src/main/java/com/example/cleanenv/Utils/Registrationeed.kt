@@ -1,9 +1,7 @@
 package com.example.cleanenv.Utils
 
-import android.text.Editable
 import android.util.Patterns
 import androidx.core.text.trimmedLength
-import java.util.regex.Pattern
 
 class Registrationeed {
     fun validPassword(passwordText: String): String?

@@ -3,7 +3,6 @@ package com.example.cleanenv.ui.home
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.http.SslCertificate.saveState
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -122,7 +121,7 @@ class HomeFragment : Fragment() {
             intent.putExtra("cloths",cloths)
             intent.putExtra("OthersTrush",OthersTrush)
             startActivity(intent)
-            Toast.makeText(context, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
         }
         return root
     }

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.cleanenv.R
 import com.example.cleanenv.databinding.ActivityAddressDetailsBinding
 
 var paper = 0
@@ -56,7 +55,7 @@ class addressDetails : AppCompatActivity() {
             intent.putExtra("OthersTrush",OthersTrush)
             startActivity(intent)
         }
-        Toast.makeText(this, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "${paper} + ${bottle} + ${canMetal} + ${glassWine} + ${cloths} + ${OthersTrush}", Toast.LENGTH_SHORT).show()
     }
 
 }

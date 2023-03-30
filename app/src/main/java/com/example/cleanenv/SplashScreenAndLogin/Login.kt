@@ -10,7 +10,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.cleanenv.EmpUi.MainActivityEmp
 import com.example.cleanenv.MainActivity
+import com.example.cleanenv.SplashScreenAndLogin.both
 import com.example.cleanenv.R
 import com.example.cleanenv.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -23,7 +25,6 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.example.cleanenv.Utils.Registrationeed
-import com.example.cleanenv.Utils.emailToNumber
 
 class Login : AppCompatActivity() {
     val prefname = "myPref"
@@ -43,7 +44,7 @@ class Login : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-            .getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
+            .getReferenceFromUrl("https://cleanenv-4ca72-default-rtdb.firebaseio.com/")
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -53,12 +54,19 @@ class Login : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.btnSignUp.setOnClickListener {
-            startActivity(Intent(this, Register::class.java))
+            if(intent.getBooleanExtra("fromCus",false)==true)startActivity(Intent(this, Register::class.java))
+            else Toast.makeText(this, "have to integrate the application section", Toast.LENGTH_SHORT).show()
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
         }
 //        passwordFocusListener()
 //        PhoneFocusListener()
 
+        if(intent.getBooleanExtra("fromCus",false)==false){
+            binding.logphone.setHint("Email")
+            binding.textView6.text = "Are you looking for the job?"
+            binding.btnSignUp.text = "Apply"
+            binding.googleSignIn.visibility = View.GONE
+        }
         sharedPreferences = this.getSharedPreferences(prefname, Context.MODE_PRIVATE)
         editer = sharedPreferences.edit()
         binding.logbutton.setOnClickListener {
@@ -67,42 +75,79 @@ class Login : AppCompatActivity() {
             var password = binding.logpass.text.toString()
             if (phone.toString() == "" || password.toString() == "") {
                 Toast.makeText(this, "please enter all the details", Toast.LENGTH_SHORT).show()
-            } else if (!checkPass.isValidMobile(phone.toString())) {
+            } else if (!checkPass.isValidMobile(phone.toString()) && (intent.getBooleanExtra("fromCus",false)==true)) {
                 Toast.makeText(this, "please enter a proper number", Toast.LENGTH_SHORT).show()
             } else {
-                phone = checkPass.isValidMobileAgainstIndian(phone).toString()
-                database.child("users").child(phone).get().addOnSuccessListener() {
-                    if (it.value == null) {
-                        Toast.makeText(
-                            this,
-                            "this phone number is not registered",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }else{
-                        database.child("users").child(phone.toString()).get().addOnSuccessListener() {
-                            if (it.child("password").value == password.toString()) {
-                                saveToSharedPrefrenceAndMoveToMainActivity(phone.toString())
-                            } else if (it.child("password").value == "") {
-                                Toast.makeText(
-                                    this,
-                                    "May your acccount registred with google please sign in with google",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            } else {
-                                Toast.makeText(this, "please enter proper password", Toast.LENGTH_SHORT)
+                if(intent.getBooleanExtra("fromCus",false)==true){
+                    phone = checkPass.isValidMobileAgainstIndian(phone).toString()
+                    database.child("users").child(phone).get().addOnSuccessListener() {
+                        if (it.value == null) {
+                            Toast.makeText(
+                                this,
+                                "this phone number is not registered",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }else{
+                            database.child("users").child(phone.toString()).get().addOnSuccessListener() {
+                                if (it.child("password").value == password.toString()) {
+                                    saveToSharedPrefrenceAndMoveToMainActivity(phone.toString())
+                                } else if (it.child("password").value == "") {
+                                    Toast.makeText(
+                                        this,
+                                        "May your acccount registred with google please sign in with google",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else {
+                                    Toast.makeText(this, "please enter proper password", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }.addOnFailureListener {
+                                Log.e("firebase", "Error getting data", it)
+                                Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
                                     .show()
                             }
-                        }.addOnFailureListener {
-                            Log.e("firebase", "Error getting data", it)
-                            Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
-                                .show()
                         }
+                    }.addOnFailureListener {
+                        Log.e("firebase", "Error getting data", it)
+                        Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
+                            .show()
                     }
-                }.addOnFailureListener {
-                    Log.e("firebase", "Error getting data", it)
-                    Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
-                        .show()
+                }else{
+                    val mail = checkPass.mailDotNotTakingProblemSolved(phone).toString()
+                    database.child("emp").child(mail).get().addOnSuccessListener() {
+                        if (it.value == null) {
+                            Toast.makeText(
+                                this,
+                                "this mail number is not registered",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }else{
+                            database.child("emp").child(mail.toString()).get().addOnSuccessListener() {
+                                if (it.child("password").value.toString() == password.toString()) {
+                                    saveToSharedPrefrenceAndMoveToMainActivityEmp(mail.toString())
+                                } else if (it.child("password").value.toString() == "") {
+                                    Toast.makeText(
+                                        this,
+                                        "May your acccount registred with google please sign in with google",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else {
+                                    Toast.makeText(this, "please enter proper password", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }.addOnFailureListener {
+                                Log.e("firebase", "Error getting data", it)
+                                Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
+                        }
+                    }.addOnFailureListener {
+                        Log.e("firebase", "Error getting data", it)
+                        Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
+
                 }
             binding.progLogIn.visibility = View.GONE
 
@@ -189,12 +234,30 @@ class Login : AppCompatActivity() {
     private fun saveToSharedPrefrenceAndMoveToMainActivity(phone: String) {
         editer.apply() {
             putBoolean("loggedin", true)
+            putBoolean("custOrEmp", true)
+            putBoolean("fst", true)
             putString("phone", phone.toString())
             apply()
         }
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("phone", phone.toString())
         intent.putExtra("commingFromLogin",true)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
+        finish()
+    }
+    private fun saveToSharedPrefrenceAndMoveToMainActivityEmp(email: String) {
+        editer.apply() {
+            putBoolean("loggedin", true)
+            putBoolean("custOrEmp", false)
+            putBoolean("fst", true)
+            putString("email", email.toString())
+            apply()
+        }
+        val intent = Intent(this, MainActivityEmp::class.java)
+        intent.putExtra("email", email.toString())
+        intent.putExtra("commingFromLogin",true)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
         finish()
     }
@@ -219,14 +282,5 @@ class Login : AppCompatActivity() {
 //        }
 //    }
 //
-    override fun onStart() {
-        super.onStart()
-        if (sharedPreferences.getBoolean("loggedin", false)) {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("phone", sharedPreferences.getString("phone", null))
-            intent.putExtra("commingFromLogin",true)
-            startActivity(intent)
-            finish()
-        }
-    }
+
 }
