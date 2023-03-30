@@ -6,11 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.ViewModel
-import com.example.cleanenv.R
 import com.example.cleanenv.databinding.FragmentAboutUsBinding
-import com.example.cleanenv.ui.home.HomeViewModel
 
 class AboutUs : Fragment() {
 

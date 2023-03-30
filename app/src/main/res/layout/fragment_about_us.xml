@@ -1,18 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.aboutUs.AboutUs">
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:fontFamily="serif"
+        android:shadowColor="#51686E"
+        android:shadowDx="2"
+        android:shadowDy="5"
+        android:shadowRadius="8"
+        android:text="About Us"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="156dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/cleanenv"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
 
+    <TextView
+        android:layout_width="119dp"
+        android:layout_height="33dp"
+        android:fontFamily="serif"
+        android:layout_gravity="center"
+        android:text="Clean Env"
+        android:textAlignment="center"
+        android:textColor="#2a4c09"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
 
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+    <TextView
+        android:layout_marginTop="25dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="15dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We are living in a world where we are generating over 8 tons of waste each day. Only as little as the 19% of the waste gets recycled."/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:paddingLeft="20dp"
+        android:textSize="15dp"
+        android:fontFamily="serif"
+        android:paddingRight="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="The app is created with the view to recycle more waste"/>\
+    <TextView
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:fontFamily="serif"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recycling with us is as easy as creating an account and requesting a CleaEnv executive to pickup the items right from home"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

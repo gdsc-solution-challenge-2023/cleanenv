@@ -15,8 +15,9 @@
     <string name="menu_Aboutus">About us</string>
     <string name="menu_ContactUs">Contact us</string>
 
-    //item prices galsses - 1.5 Rs/kg.      paper / iron / steel 23 Rs/kg.       boxes 8Rs / ps.
+    //item prices galsses - 1.5 Rs/kg. paper / iron / steel 23 Rs/kg. boxes 8Rs / ps.
     <string name="paper_iron_steel">20 - 25 Rs/kg</string>
     <string name="galsses">1 - 3 Rs/kg</string>
     <string name="Boxes">8 Rs/Ps</string>
+    <string name="title_activity_main_emp">MainActivityEmp</string>
 </resources>

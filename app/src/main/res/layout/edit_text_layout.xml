@@ -13,6 +13,7 @@
         android:textAlignment="center" />
     <EditText
         android:id="@+id/txt_input"
+        android:maxLength="10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -38,22 +39,23 @@
             android:layout_height="match_parent"
             android:layout_marginStart="5dp"
             android:backgroundTint="@color/colorSecendory"
-            android:text="Okay"
-            android:textColor="#ffffff"
-            android:textSize="15sp"
-            android:layout_weight="1"
-            android:id="@+id/btn_okay"/>
-        <Button
-            android:layout_width="450dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:backgroundTint="@color/colorSecendory"
             android:text="Resend"
             android:visibility="gone"
             android:textColor="#ffffff"
             android:textSize="15sp"
             android:layout_weight="1"
             android:id="@+id/btn_resend"/>
+        <Button
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/colorSecendory"
+            android:text="Okay"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:id="@+id/btn_okay"/>
+
     </LinearLayout>
 
 </LinearLayout>

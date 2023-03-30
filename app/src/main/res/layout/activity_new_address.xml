@@ -47,6 +47,7 @@
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxStrokeWidth="0dp"
+        android:visibility="gone"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
         app:endIconTint="@color/colorPrimary"
@@ -73,7 +74,10 @@
         android:id="@+id/edttexthouseno"
         android:layout_width="371dp"
         android:layout_height="57dp"
+        android:textAlignment="center"
         android:hint="House/Flat/Block No"
+        android:background="@drawable/botton_sheet_background"
+        android:backgroundTint="@color/colorPrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -86,6 +90,9 @@
         android:layout_width="371dp"
         android:layout_height="57dp"
         android:hint="Landmark"
+        android:textAlignment="center"
+        android:background="@drawable/botton_sheet_background"
+        android:backgroundTint="@color/colorPrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -138,7 +145,7 @@
         app:layout_constraintVertical_bias="0.823" />
 
     <Button
-
+        android:id="@+id/continuee"
         android:layout_width="302dp"
         android:layout_height="40dp"
         android:background="@drawable/botton_sheet_background"

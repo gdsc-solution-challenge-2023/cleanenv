@@ -19,8 +19,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyleViewProductList"
-            android:background="@color/colorPrimaryVariant"
-            android:elevation="3dp"
+            android:backgroundTint="@color/colorPrimaryVariant"
+            android:elevation="5dp"
+            android:paddingTop="4dp"
+            app:cardCornerRadius="10dp"
+            android:background ="@drawable/corner"
             android:layout_width="333dp"
             android:layout_height="163dp"
             android:layout_gravity="center"
@@ -75,6 +78,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.056" />
+    <TextView
+        android:id="@+id/txtviewConvenienceFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A convenience fee of 15 rupees will be charged "
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.365" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please note that the above prices are approximate. Our pick up partner will confirm the exact prices. "
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.400" />
+
 
     <TextView
         android:id="@+id/textView3"
@@ -87,10 +118,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintVertical_bias="0.474" />
 
     <EditText
         android:id="@+id/editIFSCNo"
@@ -164,18 +195,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.907" />
 
-    <TextView
-        android:id="@+id/txtviewConvenienceFee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A convenience fee of 15 rupees will be charged "
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

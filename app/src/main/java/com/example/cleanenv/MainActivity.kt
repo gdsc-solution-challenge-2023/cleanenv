@@ -6,27 +6,25 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import com.example.cleanenv.SplashScreenAndLogin.Login
+import com.example.cleanenv.SplashScreenAndLogin.both
 import com.example.cleanenv.Utils.Registrationeed
-import com.example.cleanenv.Utils.emailToNumber
 import com.example.cleanenv.databinding.ActivityMainBinding
-import com.example.cleanenv.databinding.FragmentSlideshowBinding
+import com.example.cleanenv.ui.slideshow.SlideshowFragment
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -76,9 +74,13 @@ class MainActivity : AppCompatActivity() {
         userEmail = header.findViewById<TextView>(R.id.UserEmail)
 
         auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/")
-        databasemailtoph = FirebaseDatabase.getInstance().getReferenceFromUrl("https://verdant-volt-default-rtdb.firebaseio.com/").child("EmailToPhone")
+        database = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cleanenv-4ca72-default-rtdb.firebaseio.com/")
+        databasemailtoph = FirebaseDatabase.getInstance().getReferenceFromUrl("https://cleanenv-4ca72-default-rtdb.firebaseio.com/").child("EmailToPhone")
         phone = intent.getStringExtra("phone").toString()
+        val bundle = Bundle()
+        bundle.putString("phone", phone)
+        val mapFragment = SlideshowFragment()
+        mapFragment.setArguments(bundle)
 
 
 
@@ -116,8 +118,9 @@ class MainActivity : AppCompatActivity() {
                 putString("phone", "")
                 apply()
             }
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, both::class.java)
             startActivity(intent)
+            finish()
             return@setOnMenuItemClickListener true
         }
         return true
@@ -130,7 +133,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
         database.child("users").child(phone.toString()).get().addOnSuccessListener(){
             email = it.child("email").value.toString()
             name = it.child("name").value.toString()
@@ -142,6 +144,7 @@ class MainActivity : AppCompatActivity() {
                     val temp = help.mailDotNotTakingProblemSolved(it2)
                     databasemailtoph.child(temp).setValue(phone)
                         .addOnSuccessListener {
+                            Toast.makeText(this, "welcome "+ name, Toast.LENGTH_LONG).show()
                             Toast.makeText(
                                 this,
                                 "successfully Registered",
@@ -158,17 +161,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             picLoading()
-            if(intent.getBooleanExtra("commingFromLogin",false)==true) {
-                Toast.makeText(this, "welcome "+ name, Toast.LENGTH_LONG).show()
-                intent.putExtra("commingFromLogin",false)
+            if(sharedPreferences.getBoolean("fst",false))Toast.makeText(this, "welcome "+ name, Toast.LENGTH_LONG).show()
+            editer.apply() {
+                putBoolean("fst", false)
+                apply()
             }
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
             Toast.makeText(this, "Error getting data from firebase", Toast.LENGTH_SHORT).show()
         }
-    }
-    override fun onResume() {
-        super.onResume()
-        Toast.makeText(this, "onReastart", Toast.LENGTH_SHORT).show()
     }
 }

@@ -3,33 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/cleanenv"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/img_1"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cleanenv"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.order_summery"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:name=".EmpUi.lastOrderSummery"
             android:exported="false" />
         <activity
-            android:name=".ui.home.newAddress"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:name=".EmpUi.AfterTrackOrder"
             android:exported="false" />
         <activity
-            android:name=".ui.home.addressDetails"
-            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:name=".EmpUi.TrackOrder"
             android:exported="false" />
+        <activity
+            android:name=".EmpUi.MainActivityEmp"
+            android:exported="false"
+            android:label="@string/title_activity_main_emp"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar" />
+        <activity
+            android:name="com.example.cleanenv.SplashScreenAndLogin.both"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar" />
+        <activity
+            android:name="com.example.cleanenv.profile"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar" />
+        <activity
+            android:name="com.example.cleanenv.ui.home.order_summery"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.cleanenv.ui.home.newAddress"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar" />
+        <activity
+            android:name="com.example.cleanenv.ui.home.addressDetails"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Cleanenv.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Cleanenv.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -38,6 +71,7 @@
         <activity
             android:name=".SplashScreenAndLogin.Register"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Cleanenv.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -46,6 +80,7 @@
         <activity
             android:name=".SplashScreenAndLogin.Login"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Cleanenv.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -54,6 +89,7 @@
         <activity
             android:name=".SplashScreenAndLogin.SplashScreen"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Cleanenv.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
