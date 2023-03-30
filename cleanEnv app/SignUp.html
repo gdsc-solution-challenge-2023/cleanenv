@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+	<body class="signUpPage loginBodyClass text-center">
+    <main class="form-signin w-100 m-auto">
+    <img src="images\cleanenv.png" alt="Logo" width="150" height="150" style="border-radius: 200px; margin-bottom: 10px;">
+	  <form class="formClass" id = "signUpForm">
+	    <h1 class="font-style-heading" style="color: #BDDDB0; text-shadow: 1px 1px #5A5453;">Sign Up</h1>
+	    <p style="color: #81a969;" class="font-style-body">You are just one step away from recycling with us</p>
+
+	    <div class="form-floating">
+	      <input type="email" class="form-control font-style-body" id="email" placeholder="Enter Email" required>
+	    </div>
+	    <div class="form-floating">
+	      <input type="text" class="form-control font-style-body" id="fullName" placeholder="Enter Full Name" required>
+	    </div>
+	    <div class="form-floating">
+	      <input type="number" class="form-control font-style-body" id="phoneNumber" placeholder="Enter Phone Number" required>
+	      <div class="invalid-feedback">
+	      	Enter 10 digit phone number
+	      </div>
+	    </div>
+	    <div class="form-floating">
+	      <input type="password" class="form-control font-style-body" id="password" placeholder="Enter Password" required>
+	      <div class="invalid-feedback">
+	      	Password should have length between 8-16 characters
+	      </div>
+	      <label class="font-style-body">
+	      	<input type="checkbox" onclick="myFunction('password')"> Show Password
+	      </label>
+	    </div>
+	    <div class="checkbox mb-3">
+	      <label class="font-style-body">
+	        <input type="checkbox" value="remember-me"> Remember me
+	      </label>
+	    </div>
+	    <button class="w-100 btn btn-lg signUpButton font-style-body" type="submit" style = "margin-bottom: 20px;">Sign Up</button>
+	    
+	    <hr size="8" width="70%" color="#D3D3D3">
+	    <p style="color: #81a969;" class="font-style-body"> Or Sign Up with Google</p>
+	    <input type="image" class="googleLogo" src="images\googleLogo.png" width="40" height="40">
+	    <p style = "margin-top: 20px;" class="font-style-body">Already have an account? <a href="LogIn.html" style = "color: black;"><b>Sign In</b></a></p>
+	  </form>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="javascript/form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+	<body class="loginPage loginBodyClass text-center">
+    <main class="form-signin m-auto w-100">
+    <img src="images\cleanenv.png" alt="Logo" width="150" height="150" style="border-radius: 200px; margin-bottom: 10px;">
+	  <form class="formClass" id="loginForm">
+	    <h1 class="font-style-heading" style="color: #BDDDB0; text-shadow: 1px 1px #5A5453;">SignIn</h1>
+	    <div class="form-floating">
+	      <input type="number" class="form-control font-style-body" id="loginPhone" placeholder="Enter Phone Number">
+	      <div class="invalid-feedback">
+	      	Enter 10 digit phone number
+	      </div>
+	    </div>
+	    <div class="form-floating">
+	      <input type="password" class="form-control font-style-body" id="loginPassword" placeholder="Enter Password">
+	      <label class="font-style-body">
+	      	<input type="checkbox" onclick="myFunction('loginPassword')"> Show Password
+	      </label>
+	    </div>
+
+	    <div class="checkbox mb-3">
+	      <label class="font-style-body">
+	        <input type="checkbox" value="remember-me"> Remember me
+	      </label>
+	    </div>
+	    <button class="w-100 btn btn-lg loginButton font-style-body" type="submit">Sign in</button>
+	    <button type="button" class="btn btn-link"><a class="font-style-body" style="color: black;" href="ResetPassword.html">Forgot Password?</a>
+	    </button>
+	    <hr>
+	    <p class="font-style-body" style="color: #81a969;">Or SignIn with google</p>
+	    <input type="image" class="googleLogo" src="images\googleLogo.png" width="40" height="40">
+	    <p style = "margin-top: 20px;" class="font-style-body">Don't have an account? <a href="SignUp.html" style = "color: black;" class="font-style-body"><b>Sign Up</b></a></p>
+	  </form>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="javascript/form.js"></script>
+  </body>
+</html>

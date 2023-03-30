@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- google api -->
+    <script
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANKDA8HMycj1DaSqgvq3d7BSehvj0Prj0&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <title>Track Order</title>
+</head>
+	<body class="change-background-2 trackOrderPage">
+	  <header>
+		  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+		    <div class="container-fluid">
+		      <img src="images/cleanenv.png" style = "border-radius: 50px;" width = "40" height = "40" alt="CleanEnv logo"><a style="font-size: 40;font-weight: 200; color: #5A5453; margin-left: 5px; margin-right: 25%;" class="font-style-heading">CleanEnv</a>
+		      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarCollapse">
+		        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="Recycle.html">Recycle</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading active" href="TrackOrder.html">Track Order</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="Order History.html">Order History</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="contactus.html">Contact Us</a>
+		          </li>
+		        </ul>
+		      </div>
+		      <a href ="settings.html"><img src="images/profile_icon.png" width = "30" height = "30" style="border-radius: 50px;" alt="Profile Photo"></a>
+		    </div>
+		  </nav>
+	  </header>
+	  <main>
+	  	<div class="center-column">
+	    	<div id = "googleMap">
+	    	</div>
+	    	<div class="trackOrder">
+	    		<h1 class="font-style-heading">Pickup Details</h1>
+	    		<p class="font-style-body">Hi, Anish is on the way to collect your order.</p>
+	    		<div id="output"></div>
+	    	</div>
+	    	<div class="row text-center">
+	    		<div class="col-md-3">
+	    			<a href="#"><img class="trackOrderImage" src="images/message.png" width="50" height="50"></a>
+	    			<p class="font-style-body">Call Pickup Partner</p>
+	    		</div>
+	    		<div class="col-md-3">
+	    			<a href="#"><img class="trackOrderImage" src="images/phone.png" width="50" height="50"></a>
+	    			<p class="font-style-body">Chat with Pickup Partner</p>
+	    		</div>
+	    		<div class="col-md-3">
+	    			<a href="#" onclick="calcRoute();"><img class="trackOrderImage" src="images/TrackButton.png" width="50" height="50"></a>
+	    			<p class="font-style-body">Track Order</p>
+	    		</div>
+	    		<div class="col-md-3">
+	    			<a href="#"><img class="trackOrderImage" id = "cancel" src="images/Cancel.png" width="50" height="50"></a>
+	    			<p class="font-style-body">Cancel Order</p>
+	    		</div>
+	    	</div>
+	    </div>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="javascript/address.js"></script>
+  </body>
+</html>

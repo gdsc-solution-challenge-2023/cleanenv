@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Settings Page</title>
+</head>
+	<body class="change-background-2">
+	  <header>
+		  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+		    <div class="container-fluid">
+		      <img src="images/cleanenv.png" style = "border-radius: 50px;" width = "40" height = "40" alt="CleanEnv logo"><a style="font-size: 40;font-weight: 200; color: #5A5453; margin-left: 5px; margin-right: 25%;" class="font-style-heading">CleanEnv</a>
+		      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarCollapse">
+		        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="Recycle.html">Recycle</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="TrackOrder.html">Track Order</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="Order History.html">Order History</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="contactus.html">Contact Us</a>
+		          </li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+	  </header>
+	  <main>
+	  		<h2 class="font-style-heading settings font-color">Settings</h2>
+	  		<div class="center-row">
+			  	<img src="images/profile_icon.png" width = "70" height = "70" style="border-radius: 50px;" alt="Profile Photo">
+			  	<a href ="#"><img src="images/edit.png" width = "15" height = "15" alt="Profile Photo"></a>
+		  	</div>
+		  	<div class="center-column">
+		  		<div class="center-row">
+			    	<h4 class="font-style-body font-style-body settings-font">Daita Sur</h4>
+			    	<a href ="#"><img src="images/edit.png" width = "15" height = "15" style="margin-top: 17px; margin-left: 10px;" alt="Profile Photo"></a>
+			    </div>
+			    <div class="center-row">
+					 <p class="settings-head font-style-body">Phone Number</p>
+					 <p class="center-row settings-options font-style-body">637829119</p>
+					 <a href ="#"><img src="images/edit.png" width = "15" height = "15" style="margin-left: 10px;" alt="Profile Photo"></a>
+				</div>
+				<hr>
+				<div class="center-row">
+					 <p class="settings-head font-style-body">Password</p>
+					 <p class="password center-row settings-options font-style-body">**********</p>
+					 <a href ="#"><img src="images/edit.png" width = "15" height = "15" style="margin-left: 10px;" alt="Profile Photo"></a>
+				</div>
+				<hr>
+				<div class="center-row">
+					 <p class="settings-head font-style-body">Address</p>
+					 <p class="center-row settings-options font-style-body">10, Lee Road, Kolkata - 700067</p>
+					 <a href ="#"><img src="images/edit.png" width = "15" height = "15" style="margin-left: 10px;" alt="Profile Photo"></a>
+				</div>
+				<div class="center-row">
+					  <button class="w-50 btn btn-lg continue-button font-style-body" type="submit" onclick="window.location.href='LogIn.html'; sessionStorage.clear();">Log Out</button>
+				</div>
+		    </div>
+	</main>
+	<script src="javascript\Recycle_script.js"></script>
+  </body>
+</html>

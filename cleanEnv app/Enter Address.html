@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- google api -->
+    <script
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANKDA8HMycj1DaSqgvq3d7BSehvj0Prj0&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Enter Address</title>
+</head>
+	<body class="change-background-2 enterAddress">
+	  <header>
+		  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+		    <div class="container-fluid">
+		      <img src="images/cleanenv.png" style = "border-radius: 50px;" width = "40" height = "40" alt="CleanEnv logo"><a style="font-size: 40;font-weight: 200; color: #5A5453; margin-left: 5px; margin-right: 25%;" class="font-style-heading">CleanEnv</a>
+		      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarCollapse">
+		        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading active" aria-current="page" href="Recycle.html">Recycle</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="TrackOrder.html">Track Order</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="Order History.html">Order History</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="contactus.html">Contact Us</a>
+		          </li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+	  </header>
+	  <main>
+	  	<h4 class="font-style-heading recycle-header font-color">Enter Delivery Address</h4>
+	  		<div class="center-column">
+	  			<div class="center-row">
+			  		<img src="images/location.png" width = "70" height = "70" alt="Add icon">
+			  	</div>
+			  	<div class="form-floating center-row">
+		      	<input type="text" class="w-50 form-control font-style-body" id="addressInput" placeholder="Start typing your address..." required>
+		    	</div>
+			  	<div class="form-floating center-row">
+			  		<input type="text" class="w-50 form-control font-style-body" id="flat" placeholder="House/Flat/Block Number" required>
+			  	</div>
+			  	<div class="form-floating center-row">
+			  		<input type="text" id="landmark" class="w-50 form-control font-style-body" placeholder="Landmark" required>
+			  	</div>
+			  	<div class="row-25">
+			  		<h5 class="font-style-heading gap">Save As</h5>
+			  	</div>
+			  	<div class="row-25">
+			  		<button class="w-10 btn btn-md save-as-button font-style-body" type="Home">Home</button>
+			  		<button class="w-10 btn btn-md save-as-button font-style-body" type="Home">Work</button>
+			  	</div>
+		  	</div>
+		  <div class="text-center"><button class="w-50 btn btn-lg continue-button font-style-body" type="submit" >Continue</button></div>
+
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="javascript/address.js"></script>
+  </body>
+</html>

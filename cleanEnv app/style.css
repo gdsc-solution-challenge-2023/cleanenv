@@ -1,0 +1,267 @@
+hr{
+	width: 70%;
+}
+
+.loginBodyClass
+{
+  display: flex;
+  align-items: center;
+  background-color: #EBF4E8;
+  align-items: center;
+
+}
+
+.form-signin{
+  max-width: 700px;
+  padding: 15px;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 2px;
+  border-color: #81a969;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-color: #81a969;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 2px;
+  border-color: #81a969;
+}
+.form-signin input[type="number"] {
+	-moz-appearance: textfield;
+  margin-bottom: 2px;
+  border-color: #81a969;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.h3{
+     text-shadow: 1px 2px 2px black;
+}
+.googleLogo{
+	border-radius: 50px;
+	border-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 1px 1px;
+}
+.loginButton{
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+.signUpButton{
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+
+.recycle-item{
+	background-color: white;
+	text-align: center;
+	width: 150px;
+	height:150px;
+	margin-left: 20px;
+	margin-top: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 2px 4px 0px #BDDDB0;
+}
+.recycle-header{
+	margin-top: 100px; 
+	margin-bottom: 30px;
+	text-align: center;
+}
+.image-style{
+	margin-top: 20px;
+	margin-bottom: 6px;
+}
+.change-color{
+	background-color: #EBF4E8;
+}
+.about-us-button{
+	width: 20%;
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+.change-background{
+	background-color: #EBF4E8;
+}
+.change-background-2{
+	background-color: #FCFFFC;
+}
+
+nav{
+	box-shadow: 0 2px 4px 0 #BDDDB0;
+	background-color: #FCFFFC;
+}
+.nav-link{
+	color: #5A5453;
+	font-weight: 500;
+}
+.font-style-body{
+	font-family: Times, Times New Roman, serif;
+	font-stretch: ultra-condensed;
+}
+.font-style-heading{
+	font-family: Times, Times New Roman, serif;
+	font-stretch: ultra-expanded;
+	font-weight: 800;
+}
+.formClass{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 700px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.about-us-images{
+	text-align: center;
+}
+.continue-button
+{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width:10%;
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+.settings{
+	margin-top: 100px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.center-row{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+.center-column{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.settings-font{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	color: #5A5453;
+}
+.settings-head{
+	color: black;
+	font-size: 18px;
+}
+.settings-options{
+	color: #5A5433;
+	font-size: 18px;
+	margin-left: 10px;
+}
+.contactus-header{
+	margin-top: 100px;
+	justify-content: center;
+	display: flex;
+}
+.contactus-options{
+	margin-top: 100px;
+	text-align: center;
+}
+.sendQuery{
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+
+/*.jumbo-cover{
+	background-size: cover; 
+	height: 500px; 
+	background-repeat: no-repeat; 
+	margin-top: 57px;"
+}*/
+.trackOrder{
+	text-align: center;
+}
+
+.trackOrderImage{
+	border-radius: 50px;
+}
+.trackCompleted{
+	margin-top:  100px;
+}
+.orderHistory{
+	margin-top:  100px;
+}
+.gap{
+	margin-top: 50px;
+}
+
+.approve-button
+{
+	margin-top: 20px;
+	margin-bottom: 50px;
+	width:10%;
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+
+.fa{
+	font-size: 100px;
+}
+.checked{
+	color:  orange;
+}
+.font-color{
+	color: #81A969;
+}
+.add-icon{
+	margin-right: 5px;
+	border-radius:  50px;
+}
+
+#line-input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #81A969;
+    outline:none;
+    box-shadow:none;
+    border-radius:  0px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.save-as-button{
+	margin-top: 20px;
+	margin-right: 10px;
+	width:10%;
+	background-color: #BDDDB0;
+	color: #5A5453;
+}
+.row-25{
+	margin-left: 25%;
+}
+.long-line{
+	width:  90%;
+}
+
+
+/*map*/
+#googleMap {
+  width: 80%;
+  height: 400px;
+  margin: 10px auto;
+}
+ 
+/*output box*/
+#output {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px auto;
+}

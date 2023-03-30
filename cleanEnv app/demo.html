@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <title>Distances btn two cities App</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" />
+</head>
+ 
+<body>
+    <div class="container">
+        <h1>Find The Distance Between Two Places.</h1>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="from"></label>
+                <input type="text" id="from" placeholder="Origin" class="form-control">
+ 
+            </div>
+            <div class="form-group">
+ 
+                <label for="to"></label>
+                <input type="text" id="to" placeholder="Destination" class="form-control">
+ 
+            </div>
+ 
+        </form>
+ 
+        <div class="form-group">
+            <button class="btn btn-info btn-lg" onclick="calcRoute();">Calculate</button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="output">
+ 
+        </div>
+        <div id="googleMap">
+ 
+        </div>
+    </div>
+ 
+    </div>
+ 
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANKDA8HMycj1DaSqgvq3d7BSehvj0Prj0&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="javascript/Main.js"></script>
+</body>
+ 
+</html>

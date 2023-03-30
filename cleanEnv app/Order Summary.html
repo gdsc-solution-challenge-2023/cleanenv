@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANKDA8HMycj1DaSqgvq3d7BSehvj0Prj0&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Order Summary</title>
+</head>
+	<body class="change-background-2 OrderSummary_file">
+	  <header>
+		  <nav class="navbar navbar-expand-md fixed-top navbar-light">
+		    <div class="container-fluid">
+		      <img src="images/cleanenv.png" style = "border-radius: 50px;" width = "40" height = "40" alt="CleanEnv logo"><a style="font-size: 40;font-weight: 200; color: #5A5453; margin-left: 5px; margin-right: 25%;" class="font-style-heading">CleanEnv</a>
+		      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarCollapse">
+		        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading active" aria-current="page" href="Recycle.html">Recycle</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading active" href="TrackOrder.html">Track Order</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" href="Order History.html">Order History</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link font-style-heading" aria-current="page" href="contactus.html">Contact Us</a>
+		          </li>
+		        </ul>
+		      </div>
+		      <a href ="settings.html"><img src="images/profile_icon.png" width = "30" height = "30" style="border-radius: 50px;" alt="Profile Photo"></a>
+		    </div>
+		  </nav>
+	  </header>
+	  <main>
+	  	<div class="center-col trackCompleted font-style-body" id="OrderSummary">
+	  		<div class="text-center">
+	  			<h3 class="font-style-heading font-color" style="padding-bottom: 30px;"> Order Summary</h3>
+	  		</div>
+	    </div>
+	    <div class="text-center gap">
+	  			<p><b>A convinience fee of 15 rupees will be charged</b></p>
+	  			<p><b>Please note that the above prices are approximate. Our pick up partner will confirm the exact prices.</b></p>
+	  	</div>
+	    <div class="center-col trackCompleted font-style-body">
+	  		<div class="text-center">
+	  			<h3 class="font-style-heading font-color">Payment</h3>
+	  		</div>
+	  		<div class="center-row">
+			  		<input type="text" id="account" class="w-50 form-control font-style-body" placeholder="Account Name">
+			</div>
+			<div class="center-row">
+			  		<input type="number" id="accno" class="w-50 form-control font-style-body" placeholder="Account Number">
+			</div>
+			<div class="center-row">
+			  		<input type="text" id="ifsc" class="w-50 form-control font-style-body" placeholder="IFSC Code">
+			 </div>
+			 <div class="text-center gap">
+
+	  			<p><b>Your money will be processed within 1-2 hours</b></p>
+	  		</div>
+	    </div>
+	    <div class="text-center"><button class="w-50 btn btn-lg approve-button font-style-body" type="make-payment" id="PlaceOrder">Place Order</button></div>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="javascript/PlaceOrder.js"></script>
+  </body>
+</html>
